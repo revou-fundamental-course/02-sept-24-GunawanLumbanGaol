@@ -1,85 +1,94 @@
-body {
-    font-family: Arial, sans-serif;
+/* Reset margin dan padding untuk semua elemen */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    }
+
+/* Styling umum untuk body */
+body {
+    font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-}
+    }
 
+/* Styling untuk header: latar belakang biru, teks putih */
 header {
-    background-color: #2980b9;
+    background-color: #3498db;
     color: white;
     padding: 20px;
-}
+    text-align: center;
+    }
 
+/* Styling untuk tombol menu di header */
+.menu {
+    margin-top: 20px;
+    }
+
+/* Styling umum untuk tombol */
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    cursor: pointer;
+    }
+
+/* Hover effect untuk tombol */
+button:hover {
+    background-color: #1c598a;
+    }
+
+/* Mengatur layout section dalam container dengan flexbox */
 .container {
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-}
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    }
 
-h1 {
-    margin: 0 0 10px 0;
-}
-
-p {
-    margin: 10px 0;
-}
-
-.button {
-    background-color: #3498db;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    margin: 10px;
-    cursor: pointer;
-}
-
-.luas-segitiga {
-    background-color: #2980b9;
-    padding: 10px;
-    margin: 20px auto;
-    width: 80%;
-    border-radius: 10px;
-}
-
-.segitiga {
-    width: 50%;
-    margin: 0 auto;
-    text-align: center;
+/* Styling untuk section kiri (Luas Segitiga) dan section kanan (Keliling Segitiga) */
+.left-section, .right-section {
+    background-color: white;
     padding: 20px;
-}
+    border: 1px solid #ddd;
+    width: 45%;
+    }
 
-.segitiga img {
-    width: 150px;
-}
+/* Styling untuk heading di dalam section */
+h2 {
+    margin-bottom: 10px;
+    }
 
-.input-area {
-    width: 50%;
-    margin: 0 auto;
-    text-align: center;
-    padding: 20px;
-}
-
-.input-area input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.input-area button {
-    background-color: #3498db;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    margin: 10px;
-    cursor: pointer;
-}
-
-#hasil {
+/* Styling form */
+form {
     margin-top: 10px;
-    font-weight: bold;
+    }
+
+/* Styling label */
+label {
+    display: block;
+    margin: 5px 0;
+    }
+
+/* Styling input */
+input {
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    }
+
+/* Media query untuk membuat tampilan responsif pada layar mobile */
+@media screen and (max-width: 768px) {
+/* Mengubah layout container dari baris ke kolom pada layar yang lebih kecil */
+.container {
+    flex-direction: column;
+    align-items: center;
+    }
+
+/* Menyesuaikan lebar section menjadi 100% pada tampilan mobile */
+.left-section, .right-section {
+    width: 100%;
+    margin-bottom: 20px; /* Tambahkan margin bawah agar ada jarak antar section */
+    }
 }

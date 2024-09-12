@@ -9,56 +9,70 @@
 </head>
 
 <body>
+    <!-- Header untuk judul dan menu -->
     <header>
         <div class="container">
             <h1>Welcome to Kaltika</h1>
             <p>Hai Sobat, Selamat datang di Kaltika! :)<br> Sebuah web apps sederhana yang berfungsi untuk menghitung nilai luas dan keliling bangun datar</p>
+            <div class="menu">
+
+                <!-- Tombol untuk memilih menu segitiga atau jajargenjang -->
+                <button onclick="showSection('segitiga')">Segitiga</button>
+                <button onclick="showSection('jajargenjang')">Jajar Genjang</button>
+            </div>
         </div>
     </header>
 
-    <main>
-        <section>
-            <button class="button">Segitiga</button>
-            <button class="button">Jajar Genjang</button>
-        </section>
+    <!-- Bagian utama yang menampilkan form hitung luas dan keliling segitiga -->
+    <main id="segitiga-section">
+    <div class="container">
+        <!-- Section kiri untuk menghitung luas segitiga -->
+        <div class="left-section">
+        <h2>Luas Segitiga</h2>
+        <img src="asset\segitiga.jpeg" alt="Segitiga">
+        <p>Rumus Luas Segitiga: L = 1/2 x a x t</p>
 
-        <section>
-            <header>
-                <div class="container luas-segitiga">
-                    <h2>Luas Segitiga</h2>
-                </div>
-            </header>
-
-            <article>
-                <div class="segitiga">
-                    <img src="asset\segitiga.jpeg" alt="Segitiga">
-                    <p>Rumus Luas Segitiga yaitu:</p>
-                    <p>L = 1/2 x a x t</p>
-                    <p>Di mana:</p>
-                    <p>L = Luas</p>
-                    <p>a = Panjang Alas</p>
-                    <p>t = Tinggi</p>
-                </div>
-            </article>
+        <!-- Form input untuk menghitung luas segitiga -->
+        <form id="luas-form">
+            <label for="alas-luas">Alas:</label>
+            <input type="number" id="alas-luas" required>
+            <label for="tinggi-luas">Tinggi:</label>
+            <input type="number" id="tinggi-luas" required>
             
-            <form>
-                <header>
-                    <div class="input-area">
-                        <h3>Hitung Luas Segitiga</h3>
-                    </div>
-                </header>
+            <!-- Tombol hitung luas dan reset form -->
+            <button type="button" onclick="hitungLuas()">Hitung</button>
+            <button type="reset">Reset</button>
+            <!-- Tempat menampilkan hasil perhitungan luas -->
+            <p id="luas-output"></p>
+        </form>
+        </div>
 
-                <div>
-                    <input type="number" id="alas" placeholder="Alas">
-                    <input type="number" id="tinggi" placeholder="Tinggi">
-                    <button id="hitung-luas">Hitung</button>
-                    <p id="hasil"></p>
-                    <button id="reset">Reset</button>
-                </div>
-            </form>
-        </section>
+    <!-- Section kanan untuk menghitung keliling segitiga -->
+    <div class="right-section">
+        <h2>Keliling Segitiga</h2>
+        <img src="asset\segitiga.jpeg" alt="Segitiga">
+        <p>Rumus Keliling Segitiga: K = S1 + S2 + S3</p>
+
+        <!-- Form input untuk menghitung keliling segitiga -->
+        <form id="keliling-form">
+            <label for="sisi1">Sisi 1:</label>
+            <input type="number" id="sisi1" required>
+            <label for="sisi2">Sisi 2:</label>
+            <input type="number" id="sisi2" required>
+            <label for="sisi3">Sisi 3:</label>
+            <input type="number" id="sisi3" required>
+
+            <!-- Tombol hitung keliling dan reset form -->
+            <button type="button" onclick="hitungKeliling()">Hitung</button>
+            <button type="reset">Reset</button>
+            <!-- Tempat menampilkan hasil perhitungan keliling -->
+            <p id="keliling-output"></p>
+        </form>
+        </div>
+    </div>
     </main>
 
+    <!-- Memasukkan script untuk fungsi JavaScript -->
     <script src="js\script.js"></script>
 </body>
 
